@@ -70,7 +70,7 @@ public class ProductController {
     @PutMapping("/product/{id}")
     public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestPart Product product,
                                                 @RequestPart MultipartFile imageFile){
-        Product product1 = null;
+        Product product1;
         try {
             product1 = service.updateProduct(id, product, imageFile);
         } catch (IOException e) {
