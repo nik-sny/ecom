@@ -101,6 +101,10 @@ public class ProductController {
         System.out.println("searching with " + keyword);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
+    @GetMapping("/products/category")
+    public ResponseEntity<List<Product>> getProductsByCategory(@RequestParam String category){
+        return new ResponseEntity<>(service.getProductByCategory(category),HttpStatus.OK);
+    }
 
 
 }
